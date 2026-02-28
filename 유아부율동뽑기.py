@@ -2,7 +2,8 @@ import os, random, time
 from datetime import datetime, timedelta
 random.seed(time.time())
 path = r'C:\Users\서원렬\Videos\수원성교회\교회 어린이 찬양'
-files_mp4 = os.listdir(path)
+files_mp4 = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+
 
 # 1. 파일 목록의 복사본을 만들고 셔플(무작위 섞기)
 pool = files_mp4.copy()
